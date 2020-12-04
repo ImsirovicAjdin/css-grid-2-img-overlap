@@ -4,11 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to make overlapping images with CSS grid - YouTube</title>
+    <style>
+        .container {
+            width: 100%;
+            max-width: 800px;
+        }
+        .mosaic {
+            display: grid;
+        }
+        .mosaic__item:first-of-type {
+            grid-column: 2 / span 2;
+        }
+        .mosaic__item:last-of-type {
+            grid-column: 2 / span 2;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <img src="one.jpg" alt="one">
-        <img src="two.jpg" alt="two">
+        <div class="mosaic">
+            <div class="mosaic__item">
+                <img src="one.jpg" alt="one">
+            </div>
+            <div class="mosaic__item">
+                <img src="two.jpg" alt="two">
+            </div>
+        </div>
     </div>
 </body>
 </html>
